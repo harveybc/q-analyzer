@@ -27,19 +27,21 @@ import struct
 import copy
 print(struct.calcsize("P") * 8)
 
-# getReward function: calculate the reward for the selected state/action 
+# calculate_signals(): calculate the training signal for the selected state/action 
 # @param: eaction = action code (0=nop, 1=buy, -1=sell)
 # @param: window = array containing observations
-def get_reward(action, window):
-    # Continuous indicators =    0:EMA(10) delayed 5 - EMA(20),
-    if action == 0:
-        # EMA(10) delayed 5 - EMA(20) : positive = buy
-        reward = (window[5][0] - window[0][1])/0.006
-        #if reward > 1.5:
-        #    reward = 1.5
-        #if reward <-1.5:
-        #    reward = -1.5
-        return {'reward':reward, 'profit':0, 'dd':0 ,'min':0 ,'max':0, 'direction':0}
+# if using the MQL dataset generator provided with gym-forex, the columns for the ema are as follows:
+#   EMA(10) = column 10
+#   EMA(5) = column 17
+#   EMA(20) = column 24
+#   the dataset has 29 columns per symbol, so, for the second symbol EMA(10) would be column 39
+def calculate_signals(dataset, d_index, num_symbols):
+    # Continuous indicators =    0:EMA(10) delayed 5 - EMA(20) 
+    # for each symbol, obtain the EMA10 5 ticks forward and EMA20
+    for i in range(0, num_symbols):
+        
+    
+    return res
 
 # main function
 # parameters: state/action code: 0..3 for open, 4..7 for close 
