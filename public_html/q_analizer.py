@@ -13,9 +13,9 @@
 ##      
 ## @return:
 ##      - correlation_file: output csv dataset containing correlations between each n_column and prediction
-##      - sum_channel_file: output csv containing sum(0,n*num_symbols, channel_i). 
-##      - training_signal_file : output csv containing the training signal for every tick but the first five ticks
-##      - standarization_file : contains the sklearn.preprocessing.StandardScaler() transformation used to standarize the input.
+##      - TODO: SACAR A OTRO PROJ q_preprocessor sum_channel_file: output csv containing sum(0,n*num_symbols, channel_i). 
+##      - TODO: SACAR A OTRO PROJ q_preprocessor training_signal_file : output csv containing the training signal for every tick but the first five ticks
+##      - TODO: SACAR A OTRO PROJ q_preprocessor standarization_file : contains the sklearn.preprocessing.StandardScaler() transformation used to standarize the input.
 
 import copy
 import csv
